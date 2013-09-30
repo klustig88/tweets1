@@ -1,0 +1,7 @@
+<%= @user.handle  %>
+
+<% @tweets.each do |t| %>
+<%= t.time_sent  %>
+<%= t.text %>
+<br>
+<% end %>
