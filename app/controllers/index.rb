@@ -28,9 +28,13 @@ post '/find_user' do
   redirect to "/#{params[:handle]}"
 end
 
-post '/tweet' do
-  p params
-  "hi"
+post '/tweet' do   
+  if request.xhr?
+    # Twitter.update(params[:tweet])  
+    erb :success_tweet, layout: false
+  else
+    erb :error_tweet
+  end
 end
 
 
